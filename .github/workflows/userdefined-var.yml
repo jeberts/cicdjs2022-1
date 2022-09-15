@@ -35,5 +35,14 @@ jobs:
   - name: Display env variables
     run: echo "Hi ${{env.lastName}}"
 
-
+ if-Windows-else:
+   runs-on: macos-latest
+   steps:
+      - name: condition 1
+        if: runner.os == 'Windows'
+        run: echo "The operating system on the runner is $env:RUNNER_OS."
+      - name: codition 2
+        if: runner.os != 'Windows'
+        run: echo "The operating system on the runner is not Windows, i's $RUNNER_OS."
+        
  
