@@ -20,8 +20,8 @@ jobs:
   runs-on:
      windows-latest
   steps:
-     - run: echo "Hi ${{firstName}}"
-     - run: echo "Hi ${{lastname}}"
+     - run: echo "Hi ${{env.firstName}}"
+     - run: echo "Hi ${{env.lastname}}"
      - run: ${{firstName}} having {{job}}
          
  ubuntu-job:
@@ -29,7 +29,7 @@ jobs:
      ubuntu-latest
   steps:
   - name: Display env variables
-    run: echo "Hi ${{lastName}}"
+    run: echo "Hi ${{env.lastName}}"
 
 
  
