@@ -12,5 +12,9 @@ jobs:
     steps:
       - shell: bash
       - run:
-         cal 2022 > cal.txt
+         expr 3 + 7 > cal.txt
        
+  job2:
+    runs-on: windows-latest
+  job3:
+    runs-on: macOS-latest
