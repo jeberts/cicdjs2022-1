@@ -20,9 +20,7 @@ jobs:
   runs-on:
      windows-latest
   steps:
-     - run: echo "Hi ${{env.firstName}}"
-     - run: echo "Hi ${{env.lastName}}"
-     - run: ${{env.firstName}} having {{job}}
+       run: echo "Hi ${{env.firstName}}"
          
  ubuntu-job:
   runs-on:
