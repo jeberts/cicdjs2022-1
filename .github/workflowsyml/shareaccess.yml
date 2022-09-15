@@ -20,7 +20,15 @@ jobs:
            path: calendar.txt
 
   job2:
+    name: Dowload file
+    Needs: [job1]
     runs-on: windows-latest
+    steps:
+       - name: Download the cal.txt file
+         uses: actions/download-artifact@v3
+         with:
+           name: calendar
+           path: calendar.txt
     
   job3:
     runs-on: macOS-latest
