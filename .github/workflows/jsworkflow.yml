@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: jsworkflow demo
 
 # Controls when the workflow will run
 on:
@@ -24,7 +24,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-
+      - uses: actions/setup-node@v3
+        with:
+         node-version:16
+         cache:'npm'
+         #package-lock.json gives list of libraries
+         cache-dependency-path: ./package-lock.json
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
@@ -34,3 +39,6 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          -name: Run Javascript
+          run: 
+            node pdftobase64.js
