@@ -63,8 +63,8 @@ jobs:
         - name: Login to DockerHub
           uses: docker/login-action@v1
           with:
-            username: ${{ secrets.DOCKERHUB_USERNAME }}
-            password: ${{ secrets.DOCKERHUB_TOKEN }}
+            username: eswaribala
+            password: dckr_pat_K26tyi28FVlOC3Hz6PXSCuAGjZc
       
         - name: Build and push
           uses: docker/build-push-action@v2
@@ -72,12 +72,12 @@ jobs:
             context: ./
             file: ./Dockerfile
             push: true
-            tags: ${{ secrets.DOCKERHUB_USERNAME }}/nodejs-demo:latest
+            tags: eswaribala/nodejs-demo:latest
           
         - name: Run the image in a container
           uses: addnab/docker-run-action@v3
           with:
-            image: ${{ secrets.DOCKERHUB_USERNAME }}/nodejs-demo:latest
+            image: eswaribala/intelgitrepo2022:pdfappv1
             run: |
               echo "runing the docker image"
               echo "Testing the nodejs  app endpoints"
