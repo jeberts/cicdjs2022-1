@@ -72,7 +72,7 @@ jobs:
             context: ./
             file: ./Dockerfile
             push: true
-            tags: eswaribala/nodejs-demo:latest
+            tags: eswaribala/intelgitrepo2022:pdfappv1
           
         - name: Run the image in a container
           uses: addnab/docker-run-action@v3
